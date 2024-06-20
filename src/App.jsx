@@ -12,34 +12,35 @@ function App() {
       .then((OutPut) => SetTehranWeather(OutPut));
   }
 
-  if (!Weatehr) return null;
-
   return (
     <>
       <section className="flex justify-center items-center flex-col mt-48 gap-y-12">
-        <input
-          ref={Input}
-          className="p-1 rounded-md outline-none"
-          type="search"
-          placeholder="City Browser"
-        />
-        <button onClick={show}> show</button>
+        <div className="flex gap-x-2 relative items-center">
+          <input
+            ref={Input}
+            className="p-[10px] rounded-md outline-none"
+            type="search"
+            placeholder="City Browser"
+          />
+          <button onClick={show} className="w-24 p-[5px] flex absolute right-3 justify-center items-center bg-gray-500 rounded-md">show</button>
+        </div>
+
         <section className="flex justify-center items-center flex-col gap-y-3 text-teal-400 bg-white p-12 px-28 rounded-sm w-max">
           <h1>
             <span className="text-black">temperature :</span>
-            {Weatehr.main.temp}
+            {Weatehr && Weatehr.main.temp}
           </h1>
           <h1>
             <span className="text-black">name :</span>
-            {Weatehr.name}
+            {Weatehr && Weatehr.name}
           </h1>
           <h1>
             <span className="text-black">Wind spped :</span>
-            {Weatehr.wind.speed}
+            {Weatehr && Weatehr.wind.speed}
           </h1>
           <h1>
             <span className="text-black">country :</span>
-            {Weatehr.sys.country}
+            {Weatehr && Weatehr.sys.country}
           </h1>
         </section>
       </section>
