@@ -12,8 +12,6 @@ function App() {
       .then((OutPut) => SetTehranWeather(OutPut));
   }
 
-  if (!Weatehr) return null;
-
   return (
     <>
       <section className="flex justify-center items-center flex-col mt-48 gap-y-12">
@@ -27,19 +25,19 @@ function App() {
         <section className="flex justify-center items-center flex-col gap-y-3 text-teal-400 bg-white p-12 px-28 rounded-sm w-max">
           <h1>
             <span className="text-black">temperature :</span>
-            {Weatehr.main.temp}
+            {Weatehr && Weatehr.main.temp}
           </h1>
           <h1>
             <span className="text-black">name :</span>
-            {Weatehr.name}
+            {Weatehr && Weatehr.name}
           </h1>
           <h1>
             <span className="text-black">Wind spped :</span>
-            {Weatehr.wind.speed}
+            {Weatehr && Weatehr.wind.speed}
           </h1>
           <h1>
             <span className="text-black">country :</span>
-            {Weatehr.sys.country}
+            {Weatehr && Weatehr.sys.country}
           </h1>
         </section>
       </section>
